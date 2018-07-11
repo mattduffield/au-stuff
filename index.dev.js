@@ -164,11 +164,11 @@ function putCache(key, value, origin, repo) {
   return caches.open(CACHE_NAME).then(cache => {
     const req = new Request(`${origin}/${key}`);
     const res = new Response(value);
-    console.log(`caching (${key}): ${value}`);
+    // console.log(`caching (${key}): ${value}`);
     // Put a copy of the response in the runtime cache.
     return cache.put(req, res).then(() => {
       // Completed caching.
-      console.log('putCache - completed!');
+      // console.log('putCache - completed!');
     });
   });
 }
